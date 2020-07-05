@@ -1,0 +1,86 @@
+---
+layout: default
+section_id: portfolio
+
+work_left:
+- title: Cafe Hampstead
+  link_to: /work/cafe-hampstead
+  image: /images/work/cafe-hampstead/cafe-hampstead-laptop.jpg
+  categories: print, design
+- title: Each Peach Studios
+  link_to: /work/each-peach-studios
+  image: /images/work/each-peach-studios/each-peach-studios-phone-hair.png
+  categories: branding
+work_middle:
+- title: DokiDoki
+  link_to: /work/doki-doki
+  image: /images/work/doki-doki/doki-doki-app-logo.png
+  categories: ux, ui, app
+- title: Hangry Avo
+  link_to: /work/hangry-avo
+  image: /images/work/hangry-avo/hangry-avo-app.png
+  categories: app, ux
+work_right:
+- title: DHL
+  link_to: /work/dhl
+  image: /images/work/dhl/dhl-americas-cup-laptop.png
+  categories: ux, ui, app
+- title: The WhitePepper
+  link_to: /work/the-whitepepper
+  image: /images/work/the-whitepepper/the-whitepepper-website.png
+  categories: branding
+---
+
+<div class="full light-pink">
+  <div class="two spacing"></div>
+  <div class="section-title">
+    <div class="row">
+      <div class="medium-10 medium-centered columns">
+        <h1 class="wow slideInUp">Work</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="full no-overflow">
+  <div class="four spacing"></div>
+  <div class="large-4 columns">
+    {% for work in page.work_left %}
+      <div class="work-wrapper">
+        <a href="{{work.link_to}}" class="work">
+          <img src="{{site.url}}/{{work.image}}" alt="">
+          <div class="info">
+            <h3>{{work.title}}</h3>
+            <p>{{work.categories}}</p>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="large-4 columns">
+    {% for work in page.work_middle %}
+      <div class="work-wrapper">
+        <a href="{{work.link_to}}" class="work">
+          <img src="{{site.url}}/{{work.image}}" alt="">
+          <div class="info">
+            <h3>{{work.title}}</h3>
+            <p>{{work.categories}}</p>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="large-4 columns">
+    {% for work in page.work_right %}
+      <div class="work-wrapper">
+        <a href="{{work.link_to}}" class="work">
+          <img src="{{site.url}}/{{work.image}}" alt="">
+          <div class="info">
+            <h3>{{work.title}}</h3>
+            <p>{{work.categories}}</p>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>

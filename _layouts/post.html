@@ -1,0 +1,36 @@
+---
+layout: default
+section_id: blog
+---
+
+<div class="full">
+  <div class="post single">
+    {% if page.images %}
+      <div class="post-header" style="background-image: url({{site.url}}/{{page.images[0]}})">
+      </div>
+    {% endif %}
+    <div class="four spacing"></div>
+    <div class="row">
+      <div class="large-9 large-centered columns">
+        <div class="post-content">
+          <h2>{{page.title}}</h2>
+          <p class='info'>
+            {% if page.categories != empty %}
+              <span>
+                {% for cat in page.categories %}
+                  <a href="#">{{cat | capitalize }}</a>
+                  {% unless forloop.last %}
+                      ,
+                  {% endunless %}
+                {% endfor %}
+              </span>
+              /
+            {% endif %}
+            <span>{{page.date | date: "%B %d, %Y" }}</span>
+          </p>
+          {{content}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
